@@ -1,25 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
+import WorkflowVisualizer from './components/WorkflowVisualizer';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+const App = () => {
+    const [workflow, setWorkflow] = useState('Git Flow');
+
+    return (
+        <div className="app">
+            <h1>Git Workflow Simulator</h1>
+            <label>
+                Select Workflow:
+                <select onChange={(e) => setWorkflow(e.target.value)}>
+                    <option value="Git Flow">Git Flow</option>
+                    <option value="GitHub Flow">GitHub Flow</option>
+                </select>
+            </label>
+            <WorkflowVisualizer workflow={workflow} />
+        </div>
+    );
+};
 
 export default App;
