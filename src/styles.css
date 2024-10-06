@@ -1,53 +1,109 @@
 body {
-    font-family: Arial, sans-serif;
-    margin: 20px;
-    background-color: #f4f4f4;
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: #121212; /* Dark background */
+    color: #e0e0e0; /* Light gray text */
 }
 
 .app {
     text-align: center;
 }
 
+h1 {
+    color: #00bcd4; /* Bright cyan for headers */
+}
+
+label {
+    margin: 20px 0;
+    font-weight: bold;
+    color: #e0e0e0; /* Light gray for labels */
+}
+
+select {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #00bcd4; /* Bright cyan border */
+    border-radius: 5px;
+    background-color: #1c1c1c; /* Dark background for select */
+    color: #e0e0e0; /* Light gray text */
+}
+
 .workflow-container {
     margin-top: 20px;
+    padding: 20px;
+    border: 1px solid #444; /* Slightly lighter border */
+    border-radius: 10px;
+    background-color: #1c1c1c; /* Dark background for the container */
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
 }
 
 .branches {
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    justify-content: space-around; 
+    flex-wrap: wrap; 
 }
 
 .branch, .merge, .conflict-resolution {
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    padding: 10px;
+    border: 2px solid #00bcd4; /* Bright cyan border */
+    border-radius: 8px;
+    padding: 15px;
     margin: 10px;
-    width: 200px;
-    background-color: white;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 220px;
+    background-color: #1e1e1e; /* Dark background for branch cards */
+    color: #e0e0e0; /* Light gray text */
+    box-shadow: 0 2px 10px rgba(255, 255, 255, 0.1);
     transition: transform 0.2s;
+}
+
+.branch.selected {
+    border-color: #ff4081; /* Bright pink for selected branches */
+    background-color: rgba(255, 64, 129, 0.2); /* Light pink background for selected branches */
 }
 
 .branch:hover {
     transform: scale(1.05);
+    background-color: #3a3a3a; /* Slightly lighter on hover */
 }
 
 .merge-button {
     padding: 10px 20px;
     margin: 10px;
-    background-color: #007bff;
+    background-color: #00bcd4; /* Bright cyan background */
     color: white;
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    transition: background-color 0.3s;
 }
 
 .merge-button:hover {
-    background-color: #0056b3;
+    background-color: #0097a7; /* Darker cyan on hover */
+}
+
+.merge-message {
+    margin-top: 20px;
+    font-size: 1.2em;
+    color: #4caf50; /* Green for success message */
 }
 
 .conflict-resolution {
-    background-color: #ffe5e5;
-    border-color: #ff9999;
+    background-color: #f44336; /* Red background for conflict resolution */
+    color: #fff; /* White text */
+    padding: 20px;
+    border-radius: 5px;
+}
+
+.conflict-resolution button {
+    padding: 10px 15px;
+    background-color: #d32f2f; /* Darker red for conflict button */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.conflict-resolution button:hover {
+    background-color: #c62828; /* Darker red on hover */
 }

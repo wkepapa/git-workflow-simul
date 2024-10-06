@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import WorkflowVisualizer from './components/WorkflowVisualizer';
 
+
 const App = () => {
     const [workflow, setWorkflow] = useState('Git Flow');
 

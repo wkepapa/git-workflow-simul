@@ -1,38 +1,123 @@
-.App {
+body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #000; /* Black background */
+  color: #e0e0e0; /* Light gray text color for contrast */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.app {
   text-align: center;
+  background: #121212; /* Very dark gray for the app container */
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(255, 255, 255, 0.1); /* Light shadow for depth */
+  padding: 20px;
+  width: 90%;
+  max-width: 800px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.workflow-container {
+  margin-top: 20px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+h1 {
+  font-size: 2.5em;
+  margin-bottom: 20px;
+  color: #00bcd4; /* Bright cyan color */
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+h2 {
+  font-size: 2em;
+  margin-bottom: 15px;
+  color: #ff4081; /* Bright pink color */
+}
+
+input[type="text"] {
+  padding: 10px;
+  border: 2px solid #00bcd4; /* Bright cyan border */
+  border-radius: 5px;
+  width: 200px;
+  background: #1c1c1c; /* Dark input background */
+  color: #e0e0e0; /* Light text color */
+  transition: border-color 0.3s ease;
+}
+
+input[type="text"]:focus {
+  border-color: #ff4081; /* Bright pink border on focus */
+  outline: none;
+}
+
+.merge-button {
+  padding: 10px 20px;
+  margin: 10px;
+  background-color: #00bcd4; /* Bright cyan background */
+  color: #000; /* Black text for contrast */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.merge-button:hover {
+  background-color: #0097a7; /* Darker cyan on hover */
+  transform: translateY(-2px);
+}
+
+.branches {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  margin-top: 20px;
+}
+
+.branch, .merge, .conflict-resolution {
+  border: 1px solid #555; /* Slightly lighter border */
+  border-radius: 5px;
+  padding: 15px;
+  margin: 10px;
+  width: 100%;
+  max-width: 300px;
+  background-color: #1c1c1c; /* Dark card background */
+  box-shadow: 0 2px 10px rgba(255, 255, 255, 0.1);
+  transition: transform 0.2s, background-color 0.3s;
+}
+
+.branch:hover {
+  transform: scale(1.05);
+}
+
+.branch.selected {
+  border-color: #ff4081; /* Change border color for selected branches */
+  background-color: rgba(255, 64, 129, 0.2); /* Light pink background for selected branches */
+}
+
+.merge-message {
+  margin-top: 20px;
+  font-size: 1.2em;
+  color: #4caf50; /* Green color for success message */
+}
+
+.conflict-resolution {
+  background-color: #f44336; /* Red background for conflict resolution */
+  color: #fff; /* White text for contrast */
+  padding: 20px;
+  border-radius: 5px;
+}
+
+.conflict-resolution button {
+  padding: 10px 15px;
+  background-color: #d32f2f; /* Darker red for conflict button */
   color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.conflict-resolution button:hover {
+  background-color: #c62828; /* Darker red on hover */
 }
